@@ -2,6 +2,7 @@ package com.yerayyas.mvvm.data.api
 
 
 
+import com.yerayyas.mvvm.data.vo.MovieDetails
 import com.yerayyas.mvvm.data.vo.MovieResponse
 import io.reactivex.Single
 import retrofit2.http.GET
