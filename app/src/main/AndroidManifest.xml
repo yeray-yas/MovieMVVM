@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" tools:ignore="GoogleAppIndexingWarning">
-
+        <activity android:name="com.yerayyas.mvvm.ui.single_movie_details.SingleActivity" />
         <activity android:name="com.yerayyas.mvvm.ui.popular_movie.MainActivity"
             android:exported="true">
             <intent-filter>
