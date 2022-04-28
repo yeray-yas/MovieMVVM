@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/yeray/AndroidStudioProjects/mvvmGradle/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/yeray/AndroidStudioProjects/mvvmGradle/app/src/main/res/layout/activity_single.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/yeray/AndroidStudioProjects/mvvmGradle/app/src/main/res/layout/movie_list_item.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/yeray/AndroidStudioProjects/mvvmGradle/app/src/main/res/layout/network_state_item.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>
