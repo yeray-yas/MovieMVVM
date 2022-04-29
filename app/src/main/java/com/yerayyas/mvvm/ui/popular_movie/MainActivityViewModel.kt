@@ -7,6 +7,9 @@ import com.yerayyas.mvvm.data.repository.NetworkState
 import com.yerayyas.mvvm.data.vo.Movie
 import io.reactivex.disposables.CompositeDisposable
 
+/**
+ * This class is used for ViewModel
+ */
 
 class MainActivityViewModel(private val movieRepository: MoviePagedListRepository) : ViewModel() {
 

@@ -3,7 +3,6 @@ package com.yerayyas.mvvm.ui.popular_movie
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
-import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -19,6 +18,9 @@ import kotlinx.android.synthetic.main.movie_list_item.view.*
 import kotlinx.android.synthetic.main.network_state_item.view.*
 import com.yerayyas.mvvm.R
 
+/**
+ * This class is used for use with recyclerView
+ */
 class PopularMoviePagedListAdapter(private val context: Context) :
     PagedListAdapter<Movie, RecyclerView.ViewHolder>(MovieDiffCallback()) {
     val movieViewType = 1
@@ -94,10 +96,13 @@ class PopularMoviePagedListAdapter(private val context: Context) :
                 movie?.overview?.substring(0, movie.overview.indexOf('.') + 1) + endOfPhrase
 
             val moviePosterURL = POSTER_BASE_URL + movie?.posterPath
+
+            //Using Glide library
             Glide.with(itemView.context)
                 .load(moviePosterURL)
                 .into(itemView.cv_iv_movie_poster)
 
+            // If you press the card, the app shows the SingleActivity
             itemView.setOnClickListener {
                 val intent = Intent(context, SingleActivity::class.java)
                 intent.putExtra("id", movie?.id)

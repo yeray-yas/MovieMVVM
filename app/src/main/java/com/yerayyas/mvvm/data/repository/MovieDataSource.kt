@@ -9,12 +9,17 @@ import com.yerayyas.mvvm.data.vo.Movie
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 
+/**
+ * This class is acting as Data Source of the repository
+ */
 class MovieDataSource(
     private val apiService: TheMovieDBInterface,
     private val compositeDisposable: CompositeDisposable
 ) : PageKeyedDataSource<Int, Movie>() {
 
     private var page = FIRST_PAGE
+
+    //Live data
     val networkState: MutableLiveData<NetworkState> = MutableLiveData()
 
     override fun loadInitial(
@@ -23,6 +28,7 @@ class MovieDataSource(
     ) {
         networkState.postValue(NetworkState.LOADING)
 
+        //Searching next page
         compositeDisposable.add(
             apiService.getPopularMovie(page)
                 .subscribeOn(Schedulers.io())

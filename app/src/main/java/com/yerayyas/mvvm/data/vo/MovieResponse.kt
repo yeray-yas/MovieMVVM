@@ -4,6 +4,8 @@ import com.google.gson.annotations.SerializedName
 
 /**
  * Data model for Movie response
+ *
+ * This class is for getting multiple movies (movies list) - popular movies
  */
 data class  MovieResponse(
     val page: Int,

@@ -16,12 +16,14 @@ const val POSTER_BASE_URL = "https://image.tmdb.org/t/p/w342"
 const val FIRST_PAGE = 1
 const val POST_PER_PAGE = 20
 
-//This object will be used to prepare retrofit to make the call
+//This object will be used to
+// prepare Retrofit to make the call
 object TheMovieDBClient {
 
     fun getClient(): TheMovieDBInterface {
         val requestInterceptor = Interceptor { chain ->
 
+            // adding the api_key to the request
             val url = chain.request()
                 .url()
                 .newBuilder()
@@ -47,7 +49,7 @@ object TheMovieDBClient {
             .build()
 
         //We return a retrofit builder object that will contain the base url of the api,
-        //the converter Gson and the client
+        //the Gson converter factory and the client
         return Retrofit.Builder()
             .client(okHttpClient)
             .baseUrl(BASE_URL)

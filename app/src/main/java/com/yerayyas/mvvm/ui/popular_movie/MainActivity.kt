@@ -12,8 +12,15 @@ import com.yerayyas.mvvm.data.repository.NetworkState
 import kotlinx.android.synthetic.main.activity_main.*
 import com.yerayyas.mvvm.R
 
+/**
+ * @author Yeray Yas
+ * @since 2022-04-29
+ * @version 1.0
+ */
+
 class MainActivity : AppCompatActivity() {
 
+    // ViewModel
     private lateinit var viewModel: MainActivityViewModel
 
     lateinit var movieRepository: MoviePagedListRepository
@@ -46,10 +53,19 @@ class MainActivity : AppCompatActivity() {
         rv_movie_list.setHasFixedSize(true)
         rv_movie_list.adapter = movieAdapter
 
+        // Observing any data change
+        observeAnyChange(movieAdapter)
+
+    }
+
+    private fun observeAnyChange(movieAdapter: PopularMoviePagedListAdapter){
+
+        //Observing any data change in moviePagedList
         viewModel.moviePagedList.observe(this, Observer {
             movieAdapter.submitList(it)
         })
 
+        //Observing any data change in networkState
         viewModel.networkState.observe(this, Observer {
             progress_bar_popular.visibility = if (viewModel.listIsEmpty() && it == NetworkState.LOADING) View.VISIBLE else View.GONE
             txt_error_popular.visibility = if (viewModel.listIsEmpty() && it == NetworkState.ERROR) View.VISIBLE else View.GONE
@@ -58,13 +74,12 @@ class MainActivity : AppCompatActivity() {
                 movieAdapter.setNetworkState(it)
             }
         })
-
     }
 
 
     private fun getViewModel(): MainActivityViewModel {
         return ViewModelProvider(this, object : ViewModelProvider.Factory {
-            override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+            override fun <T : ViewModel?> create(modelClass: Class<T>): T{
                 @Suppress("UNCHECKED_CAST")
                 return MainActivityViewModel(movieRepository) as T
             }

@@ -6,6 +6,9 @@ enum class Status {
     FAILED
 }
 
+/**
+ * This class stores our network states
+ */
 class NetworkState(val status: Status, val msg: String) {
 
     companion object {
