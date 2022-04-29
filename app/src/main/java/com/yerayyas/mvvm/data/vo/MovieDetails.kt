@@ -2,6 +2,10 @@ package com.yerayyas.mvvm.data.vo
 
 import com.google.gson.annotations.SerializedName
 
+/**
+ * Data model for Movie details
+ */
+
 data class MovieDetails(
     val budget: Int,
     val id: Int,

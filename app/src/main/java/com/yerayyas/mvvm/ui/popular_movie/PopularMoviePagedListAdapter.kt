@@ -3,6 +3,7 @@ package com.yerayyas.mvvm.ui.popular_movie
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -24,7 +25,6 @@ class PopularMoviePagedListAdapter(private val context: Context) :
     private val networkViewType = 2
 
     private var networkState: NetworkState? = null
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
