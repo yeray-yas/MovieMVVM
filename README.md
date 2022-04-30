@@ -1,4 +1,4 @@
-# MovieApp-MVVM
+# MovieMVVM
 
 A simple project using The Movie DB based on Kotlin MVVM architecture.
 
