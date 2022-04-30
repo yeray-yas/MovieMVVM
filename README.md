@@ -1,4 +1,4 @@
-# MovieMVVM
+# TMDB MVVM
 
 A simple project using The Movie DB based on Kotlin MVVM architecture.
 
